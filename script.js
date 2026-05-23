@@ -16,6 +16,8 @@ function calculateTime(){
     var finalTime = `${formattedHour}:${formattedMinute} ${period}`;
     document.getElementById("result").innerText = finalTime;
     localStorage.setItem("Savedresult", finalTime);   // Save the result to local storage
+    localStorage.setItem("Savedstarttime", startTime);   // Save the start time to local storage
+
 }
 
 // Load the saved result from local storage when the page loads
@@ -23,5 +25,9 @@ window.onload = function() {
     var savedResult = localStorage.getItem("Savedresult");
     if (savedResult) {
         document.getElementById("result").innerText = savedResult;
+    }
+    var savedStartTime = localStorage.getItem("Savedstarttime");
+    if (savedStartTime) {
+        document.getElementById("startTime").value = savedStartTime;
     }
 }
