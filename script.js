@@ -13,5 +13,15 @@ function calculateTime(){
         formattedHour = 12;
     }
 
-    document.getElementById("result").innerText = `${formattedHour}:${formattedMinute} ${period}`;
+    var finalTime = `${formattedHour}:${formattedMinute} ${period}`;
+    document.getElementById("result").innerText = finalTime;
+    localStorage.setItem("Savedresult", finalTime);   // Save the result to local storage
+}
+
+// Load the saved result from local storage when the page loads
+window.onload = function() {
+    var savedResult = localStorage.getItem("Savedresult");
+    if (savedResult) {
+        document.getElementById("result").innerText = savedResult;
+    }
 }

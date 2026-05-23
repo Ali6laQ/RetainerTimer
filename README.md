@@ -54,7 +54,7 @@ The app will display:
 
 - Add dark/light mode
 - Allow custom duration instead of fixed 8 hours
-- Save previous calculations
+- Save previous calculations ✅
 - Mobile app version
 
 ## Author
